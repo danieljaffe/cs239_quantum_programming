@@ -60,9 +60,9 @@ def deutsch_jozsa(f, n):
     output = None
     for position in range(2 ** (n - 1)):
         if position is 0:
-            output = f(bit_combo_list[position])
+            output = f(*bit_combo_list[position])
             continue
-        if f(bit_combo_list[position]) != output:
+        if f(*bit_combo_list[position]) != output:
             print("The function f is balanced.")
             return 0
     print("The function f is constant")
