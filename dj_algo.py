@@ -58,7 +58,7 @@ def deutsch_jozsa(f, n):
     # more than half the total bit combinations of length n, and the output always matches,
     # the function must be constant.
     output = None
-    for position in range(2 ** (n - 1)):
+    for position in range(2 ** (n - 1) + 1):
         if position is 0:
             output = f(*bit_combo_list[position])
             continue
