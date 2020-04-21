@@ -63,6 +63,16 @@ def simon(f, n):
                 # Conversion from a list to a bit string
                 s = "".join([str(item) for item in x_XOR_y])
                 return s
+        # See Note below for explanation as to the outer loop that doesn't really do anything.
+        # If no 2-1 mapping was found, return the bit string of {0}^n.
+        return '0' * n
 
+    """
+    Note: I moved the return statement inside the loop as I realised that we have the assumption here
+          that f will always map 2-1 or 1-1. If this assumption holds true, we do not need the outer most
+          loop as we can simply use the inner most loop to check all options against our first input to f.
+          This means means the outer loop isn't a loop at all. I left the code with the loop structure though
+          in case we are given a position where we cannot make this assumption about f.
     # If no 2-1 mapping was found, return the bit string of {0}^n.
     return '0' * n
+    """
